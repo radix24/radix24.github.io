@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>조현서 · Hyunseo Cho</title>
+  <meta name="description" content="천문우주학을 공부했고, 과학교육 팀 나뭇잎에서 사업을 맡고 있는 조현서입니다.">
+  <meta property="og:title" content="조현서 · Hyunseo Cho">
+  <meta property="og:description" content="천문우주학을 공부했고, 과학교육 팀 나뭇잎에서 사업을 맡고 있습니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://radix24.github.io/">
+  <meta name="theme-color" content="#05060d">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="sky" aria-hidden="true"></canvas>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="맨 위로">
+      <svg viewBox="0 0 32 32" width="20" height="20" aria-hidden="true"><circle cx="16" cy="16" r="5" fill="currentColor"/><ellipse cx="16" cy="16" rx="14" ry="6" fill="none" stroke="currentColor" stroke-width="1.4" transform="rotate(-24 16 16)"/></svg>
+      <span>조현서</span>
+    </a>
+    <div class="hud" aria-hidden="true">
+      <span class="hud__k">ALT</span><span class="hud__v" id="alt">0 km</span>
+      <span class="hud__zone" id="zone">GROUND</span>
+      <span class="hud__bar"><span id="altbar"></span></span>
+    </div>
+    <nav class="nav" aria-label="섹션">
+      <a href="#about">소개</a>
+      <a href="#achievements">성과</a>
+      <a href="#projects">프로젝트</a>
+      <a href="#career">약력</a>
+      <a href="#contact">연락</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="top" class="hero" data-alt="0" data-zone="GROUND">
+      <div class="hero__orbit" aria-hidden="true">
+        <svg viewBox="0 0 600 600">
+          <ellipse class="o1" cx="300" cy="300" rx="280" ry="110"/>
+          <circle class="sat" r="3"><animateMotion dur="24s" repeatCount="indefinite" path="M20,300 a280,110 0 1,0 560,0 a280,110 0 1,0 -560,0"/></circle>
+        </svg>
+      </div>
+      <div class="hero__inner">
+        <h1 class="hero__name">조현서 <span class="en">Hyunseo Cho</span></h1>
+        <p class="hero__lead">연세대학교에서 천문우주학을 공부했고, 지금은 과학교육 팀 <a href="https://nmnp.kr" target="_blank" rel="noopener">나뭇잎</a>에서 사업을 맡고 있습니다. 우주산업의 사업기획과 대외협력 일을 하고 싶습니다.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#achievements">한 일 보기</a>
+          <a class="btn" href="#contact">연락하기</a>
+        </div>
+      </div>
+      <a class="scrollcue" href="#about" aria-label="아래로"><i></i></a>
+    </section>
+
+    <!-- 소개 -->
+    <section id="about" class="section" data-alt="12" data-zone="TROPOSPHERE">
+      <header class="sec-head">
+        <p class="sec-tag">About</p>
+        <h2>소개</h2>
+      </header>
+      <div class="prose reveal">
+        <p>연세대학교 천문우주학과에 2022년 입학해 2023년 천문우주학과 학생회장, 2024년 이과대학 학생회장을 맡았습니다. 학생회 일을 하면서 사업을 기획하고, 필요한 돈과 사람을 바깥에서 구해 오고, 학교와 기관을 설득하는 일을 주로 했습니다.</p>
+        <p>지금은 학업을 멈추고 산업기능요원(군복무)으로 수배전반 품질관리 일을 하고 있습니다. 동시에 과학교육·과학문화 팀 나뭇잎의 총괄본부장을 맡고 있고, 서대문구 청년정책위원으로 우주항공 관련 조례 제정을 추진하고 있습니다.</p>
+        <p>우주산업의 기술 전문성은 아직 쌓는 중입니다. 지금까지는 아이디어를 실제 사업으로 만들고, 그 과정에서 바깥의 협력을 끌어오는 일을 해 왔습니다.</p>
+      </div>
+    </section>
+
+    <!-- 성과 -->
+    <section id="achievements" class="section" data-alt="100" data-zone="KÁRMÁN LINE">
+      <header class="sec-head">
+        <p class="sec-tag">Achievements</p>
+        <h2>성과</h2>
+      </header>
+
+      <article class="ach reveal">
+        <div class="ach__head">
+          <span class="ach__when">2024 · 이과대학 학생회장</span>
+          <h3>COSPAR 2024 학부생 참가 지원</h3>
+        </div>
+        <dl class="ach__body">
+          <div><dt>배경</dt><dd>2024년 7월 부산에서 국제우주연구위원회(COSPAR) 학술총회가 열렸습니다. 국내에서 열리는 드문 기회였지만, 학부생이 개인적으로 등록비·숙박비·교통비를 마련해 참가하기는 어려웠습니다.</dd></div>
+          <div><dt>한 일</dt><dd>이과대학 학생회 지원사업으로 기획하고, 후원 제안서를 써서 기업 후원을 직접 유치했습니다. 대학, 외부 기관과 협력해 지원사업을 운영했습니다.</dd></div>
+          <div><dt>결과</dt><dd><b>학부생 29명</b>이 등록비·숙박비·교통비를 지원받아 학술총회에 참가했습니다.</dd></div>
+        </dl>
+      </article>
+
+      <article class="ach reveal">
+        <div class="ach__head">
+          <span class="ach__when">2023 – 2024 · 천문우주학과 학생회장</span>
+          <h3>국가 R&amp;D 예산 삭감 대응</h3>
+        </div>
+        <dl class="ach__body">
+          <div><dt>배경</dt><dd>2024년도 정부 연구개발(R&amp;D) 예산이 크게 삭감되면서, 기초과학과 천문·우주 분야 연구실과 학생들의 연구 환경이 직접 영향을 받게 되었습니다.</dd></div>
+          <div><dt>한 일</dt><dd>천문·우주항공 분야 유관 학과들이 모인 공동행동의 의장을 맡았고, 대학생 공동행동의 연세대 측 실무를 했습니다. &lt;R&amp;D 예산 삭감 대응을 위한 대학생 국회토론회&gt;의 기획을 총괄했고, 이듬해에는 학과 특별위원회 부위원장으로 대응을 이어 갔습니다.</dd></div>
+          <div><dt>결과</dt><dd>국회와 관계 기관에 연구 현장의 목소리를 전달해 <b>이공계 학생 인건비 6,000억 원 증액</b>을 이끌어 냈습니다.</dd></div>
+        </dl>
+      </article>
+
+      <article class="ach reveal">
+        <div class="ach__head">
+          <span class="ach__when">2026 – 진행 중 · 서대문구 청년정책위원 · 나뭇잎</span>
+          <h3>서대문구 우주항공 기본조례 제정 추진</h3>
+        </div>
+        <dl class="ach__body">
+          <div><dt>배경</dt><dd>지역에서 과학문화 프로그램을 열어도 일회성으로 끝나기 쉽습니다. 계획과 예산, 민관학 협력이 계속되려면 제도적 근거가 필요합니다.</dd></div>
+          <div><dt>한 일</dt><dd>서대문구 청년정책위원으로서 천문우주 과학문화 확산과 우주산업 진흥을 위한 조례 제정을 핵심 과제로 삼았습니다. 나뭇잎 팀도 지역 과학문화 사업의 하나로 협력하고 있습니다.</dd></div>
+          <div><dt>현황</dt><dd>추진 중입니다.</dd></div>
+        </dl>
+      </article>
+
+      <article class="ach reveal">
+        <div class="ach__head">
+          <span class="ach__when">2019 – 2020 · 경기고등학교</span>
+          <h3>경기고 이공계동아리연합 창립</h3>
+        </div>
+        <dl class="ach__body">
+          <div><dt>한 일</dt><dd>교내 이공계 동아리들을 하나로 묶는 연합을 만들고 창립회원으로서 제1기 회장을 맡았습니다.</dd></div>
+          <div><dt>운영</dt><dd>연합의 장기운영기획안 <b>VISION 2020</b>을 써서 발표했습니다. 동아리 신입생 설명회 “Thinking in Color, Innovation in Blue”와 학교 축제 화동제의 연합 토큰을 기획했고, 동아리 운영을 돕는 통합지원시스템 <b>kyunggi.club</b>을 기획했습니다.</dd></div>
+          <div><dt>이후</dt><dd>임기를 마친 뒤 2020년에는 운영자문으로 다음 기수의 운영을 도왔습니다.</dd></div>
+        </dl>
+      </article>
+
+      <article class="ach reveal">
+        <div class="ach__head">
+          <span class="ach__when">2018 · 경기고등학교</span>
+          <h3>학생 생활 지원 챗봇 KyunggiLife</h3>
+        </div>
+        <dl class="ach__body">
+          <div><dt>목표</dt><dd>“경기고등학교를 더 편하게.” 학생들이 매일 찾아보는 학교생활 정보를 한곳에서, 물어보면 바로 답하도록 하고 싶었습니다.</dd></div>
+          <div><dt>한 일</dt><dd>카카오톡 플러스친구로 동작하는 학생 생활 챗봇을 혼자 기획하고 개발했습니다. 중식·석식 <b>급식</b>, <b>시간표</b>, <b>버스 시간</b>, 날씨를 카카오톡에서 물어보면 바로 안내해 줍니다. Python으로 시작해 PHP로 다시 만들었습니다.</dd></div>
+          <div><dt>확장</dt><dd>2018년 학교 축제 화동제에서는 방문객을 위해 부스 이름 검색과 시설 위치 안내 기능을 더했습니다. 2018년 4월부터 2019년 2월까지 꾸준히 기능을 늘려 갔습니다.</dd></div>
+          <div><dt>코드</dt><dd><a class="inline-link" href="https://github.com/radix24/KGHS_Chatbot_HDF" target="_blank" rel="noopener">github.com/radix24/KGHS_Chatbot_HDF ↗</a></dd></div>
+        </dl>
+      </article>
+
+      <ul class="ach-more reveal">
+        <li><span>2023</span><div><b>제1회 천문제 &lt;하늘에 길을 묻다&gt;</b> 천문우주학과의 첫 천문제를 기획단장으로 열었습니다.</div></li>
+        <li><span>2023</span><div><b>연세대 천문우주학과 × 서울대 물리·천문학부 교류행사</b> 두 학교 학과 간 교류행사를 기획단장으로 성사시켰습니다.</div></li>
+      </ul>
+    </section>
+
+    <!-- 프로젝트 -->
+    <section id="projects" class="section" data-alt="408" data-zone="LOW EARTH ORBIT">
+      <header class="sec-head">
+        <p class="sec-tag">Projects</p>
+        <h2>프로젝트</h2>
+      </header>
+
+      <article class="proj proj--wide reveal">
+        <div class="proj__top"><h3>나뭇잎 <span class="en">Namunnip</span></h3><a href="https://nmnp.kr" target="_blank" rel="noopener">nmnp.kr ↗</a></div>
+        <p class="proj__role">총괄본부장 (2026.05 –)</p>
+        <p>서울대·연세대 학생들이 만든 과학교육·과학문화 팀입니다. 과학 지식의 문턱을 낮추고, 교과서에서 생략된 설명과 개념 사이의 연결을 복원하는 것을 목표로 합니다. 사업기획과 대외협력을 맡아 교육기관·출판사·공공기관과의 협력을 찾고 새 사업의 실행 가능성을 검토합니다.</p>
+        <ul class="proj__list">
+          <li><b>이해</b> 통합과학 개념서 in:it, 문제·평가, 짧은 개념 영상</li>
+          <li><b>경험</b> 연세대학교 과학 캠프, 학생 AI 교육, 중장년 AI 리터러시</li>
+          <li><b>문화·제도</b> 지역 과학문화 프로그램, 서대문구 우주항공 기본조례 제정 협력</li>
+        </ul>
+      </article>
+
+      <div class="proj-grid">
+        <article class="proj reveal">
+          <div class="proj__top"><h3>나뭇잎 디지털 교과서</h3><a href="https://radix24.github.io/namunnip-textbook/" target="_blank" rel="noopener">열기 ↗</a></div>
+          <p>고등학교 수학·과학 디지털 교과서입니다. 2022 개정 교육과정의 37개 과목을 699개 절로 나누고, 절마다 그림을 직접 조작해 보는 개념 카드를 두었습니다.</p>
+          <ul class="proj__list">
+            <li>카드는 질문 → 복원 → 설명 → 연결 → 적용 → 판단의 여섯 단계로 짭니다.</li>
+            <li>개념 사이의 선수 관계를 보여 주는 개념 지도, 메모·오답노트, 기출 연습문제가 있습니다.</li>
+            <li>설치형 웹앱이라 한 번 열면 인터넷 없이도 볼 수 있습니다.</li>
+          </ul>
+          <p class="proj__nums">37과목 · 699절 · 카드 1,057장</p>
+        </article>
+
+        <article class="proj reveal">
+          <div class="proj__top"><h3>QURI <span class="en">큐리</span></h3><a href="https://radix24.github.io/namunnip-textbook-univ/" target="_blank" rel="noopener">열기 ↗</a></div>
+          <p>대학 1~3학년 과정을 혼자 공부할 수 있는 디지털 교과서입니다. 수학, 물리학, 화학, 천문우주학, 응용통계학, 전기전자공학, 기계공학 7개 학과와 공통 기초 과목을 다룹니다.</p>
+          <ul class="proj__list">
+            <li>과목을 대단원과 성취기준으로 나누고, 설명·증명·유도·예제·연습·탐구·실습 카드를 둡니다.</li>
+            <li>과목 구성은 연세대학교 2026학년도 대학요람과 수강편람을 따랐습니다.</li>
+          </ul>
+          <p class="proj__nums">155과목 · 944대단원 · 2,233절</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 약력 -->
+    <section id="career" class="section" data-alt="35786" data-zone="GEOSTATIONARY">
+      <header class="sec-head">
+        <p class="sec-tag">Career</p>
+        <h2>약력</h2>
+      </header>
+      <ol class="timeline">
+        <li class="reveal is-live">
+          <time>2026.10 – 2028.10</time>
+          <h3>서대문구 청년정책위원</h3>
+        </li>
+        <li class="reveal is-live">
+          <time>2026.05 –</time>
+          <h3>나뭇잎 · 총괄본부장</h3>
+        </li>
+        <!-- [사교육 경력] 빼려면 아래 li 하나를 지우면 됩니다 -->
+        <li class="reveal is-live is-minor" data-optional="private-education">
+          <time>2025.10 –</time>
+          <h3>지구과학 문항 개발 <small>출제조교</small></h3>
+        </li>
+        <!-- [사교육 경력] 끝 -->
+        <li class="reveal is-live">
+          <time>2025.08 –</time>
+          <h3>㈜이테크 생산팀 · 사원 <small>산업기능요원 (군복무)</small></h3>
+          <p>수배전반 품질관리(QA/QC)와 AutoCAD 설계</p>
+        </li>
+        <li class="reveal">
+          <time>2025.04 – 2025.07</time>
+          <h3>(사)한국안전보건단체총연합회 사업국 · 주임</h3>
+          <p>사업기획과 행정 실무</p>
+        </li>
+        <li class="reveal">
+          <time>2024.04 – 2025.01</time>
+          <h3>제60대 연세대 이과대학 학생회장</h3>
+        </li>
+        <li class="reveal">
+          <time>2022.12 – 2023.11</time>
+          <h3>제21대 연세대 천문우주학과 학생회장</h3>
+        </li>
+        <li class="reveal">
+          <time>2022.03 – 2024.08</time>
+          <h3>연세대학교 천문우주학과 <small>중퇴</small></h3>
+        </li>
+        <li class="reveal">
+          <time>2021</time>
+          <h3>경기고등학교 졸업</h3>
+        </li>
+      </ol>
+
+      <h3 class="subhead reveal">학생자치</h3>
+      <div class="council">
+        <div class="council__group reveal">
+          <h4>연세대 이과대학</h4>
+          <ul>
+            <li><span>2025</span>새내기맞이 기획단 &lt;서광&gt; 기획단장</li>
+            <li><span>2023</span>이과대학 연합 주점 &lt;우酒정거장&gt; 기획단장</li>
+          </ul>
+        </div>
+        <div class="council__group reveal">
+          <h4>연세대 천문우주학과</h4>
+          <ul>
+            <li><span>2024</span>R&amp;D 예산 삭감 대응 특별위원회 부위원장</li>
+            <li><span>2023</span>제1회 천문제 &lt;하늘에 길을 묻다&gt; 기획단장</li>
+            <li><span>2023</span>새내기맞이단 단장</li>
+          </ul>
+        </div>
+        <div class="council__group reveal">
+          <h4>연세대 총학생회</h4>
+          <ul>
+            <li><span>2024</span>제57대 &lt;Yours&gt; 이공계 교육혁신기획단 공동단장</li>
+            <li><span>2024</span>제57대 &lt;Yours&gt; 교육정책국원</li>
+            <li><span>2023</span>공동포럼 SUF 사무처 기획팀장</li>
+          </ul>
+        </div>
+        <div class="council__group reveal">
+          <h4>연세대 국제캠퍼스 학생대표위원회</h4>
+          <ul>
+            <li><span>2023</span>제5대 준비위원회 집행부 실무 총괄</li>
+            <li><span>2022</span>제4대 “dYnamIC” 집행위원회 사무운영국장</li>
+          </ul>
+        </div>
+      </div>
+
+      <details class="more reveal">
+        <summary>그 밖의 활동</summary>
+        <ul>
+          <li><span>2023</span>전국대학생연합 싱크탱크 유니버스(univ.us) 재무총괄</li>
+          <li><span>2022</span>대학 축제 결제 서비스 CampusPay 대표</li>
+          <li><span>2022</span>디자인 중개 플랫폼 미래디자인벤처스 대표</li>
+          <li><span>2019</span>경기고 진로체험강연회 DREAM RELAY 2019 · 교육봉사 “교실에서 교실로” 기획</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- 역량 -->
+    <section id="skills" class="section" data-alt="384400" data-zone="LUNAR DISTANCE">
+      <header class="sec-head">
+        <p class="sec-tag">Skills</p>
+        <h2>할 수 있는 것</h2>
+      </header>
+      <div class="skills">
+        <div class="reveal">
+          <h3 class="label">일</h3>
+          <p class="tags"><span>사업기획</span><span>대외협력 · 파트너십</span><span>후원 유치 · 제안서</span><span>프로젝트 관리</span><span>정책기획 · 공공기관 협력</span><span>품질관리 QA/QC</span></p>
+        </div>
+        <div class="reveal">
+          <h3 class="label">언어</h3>
+          <p class="plain">한국어(모국어) · 영어, 일본어(능숙) · 프랑스어, 독일어, 러시아어(기초)</p>
+        </div>
+        <div class="reveal">
+          <h3 class="label">도구</h3>
+          <p class="tags tags--mono"><span>AutoCAD</span><span>Python</span><span>JavaScript</span><span>C/C++</span><span>PHP · MySQL</span><span>Photoshop</span><span>Illustrator</span><span>Premiere Pro</span><span>After Effects</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 연락 -->
+    <section id="contact" class="section" data-alt="1500000" data-zone="SUN–EARTH L2">
+      <header class="sec-head">
+        <p class="sec-tag">Contact</p>
+        <h2>연락</h2>
+        <p class="sec-sub">우주산업, 과학교육, 과학문화와 정책에 관한 이야기라면 편하게 연락 주세요.</p>
+      </header>
+      <ul class="links reveal">
+        <li><a href="mailto:evrgrn0528@gmail.com">evrgrn0528@gmail.com</a></li>
+        <li><a href="mailto:evergreen24@yonsei.ac.kr">evergreen24@yonsei.ac.kr</a></li>
+        <li><a href="https://github.com/radix24" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/hyunseo-cho-88a6201a4/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/chohs_0528/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.facebook.com/hyunseo.0528/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://linktr.ee/evergreen24" target="_blank" rel="noopener">Linktree</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© 2026 조현서</span>
+    <span class="mono">ad astra</span>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
