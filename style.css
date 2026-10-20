@@ -85,7 +85,7 @@ b, strong { font-weight: 600; color: var(--text); }
 .hero__orbit svg { width: min(900px, 130vw); height: auto; opacity: .4; transform: rotate(-14deg); }
 .hero__orbit ellipse { fill: none; stroke: var(--line-strong); stroke-width: 1; }
 .hero__orbit .sat { fill: var(--ion); }
-.hero__inner { position: relative; max-width: 620px; text-align: center; }
+.hero__inner { position: relative; max-width: 760px; text-align: center; }
 .hero__name { margin: 0 0 20px; font-size: clamp(40px, 7vw, 60px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; }
 .hero__name .en { display: block; margin-top: 6px; font-family: var(--display); font-size: 15px; font-weight: 400; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); }
 .hero__lead { font-size: clamp(16px, 2vw, 18px); color: var(--body); margin: 0; }
@@ -224,3 +224,4 @@ b, strong { font-weight: 600; color: var(--text); }
 .langs__lv i { width: 8px; height: 8px; border-radius: 50%; border: 1px solid var(--line-strong); }
 .langs__lv i.on { background: var(--ion); border-color: var(--ion); }
 .proj-grid > .proj:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.soon { font-size: 12px; font-weight: 400; color: var(--muted); margin-left: 4px; white-space: nowrap; }
